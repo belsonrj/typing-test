@@ -9,14 +9,15 @@ import quotes from './data/Quotes.data.json';
 function App() {
 
   const [words, setWords] = useState(0);
+  const [chars, setChars] = useState(0);
   const [testQuote, setTestQuote] = useState(null);
-  const [time, setTime] = useState(0.0);
-  const [timerOn, setTimerOn] = useState(false);
 
   const handleInput = (e) => {
     const input = e.target.value;
+    const char = input.length
     const count = input.split(" ").length;
     setWords(count);
+    setChars(char);
   }
 
   return (
@@ -34,8 +35,9 @@ function App() {
       <div className="flex-2">
         <Status 
           words={words}
-          time={time}
-          timerOn={timerOn}
+          chars={chars}
+          setWords={setWords}
+          testQuote={testQuote}
         />
       </div>
     </div>
