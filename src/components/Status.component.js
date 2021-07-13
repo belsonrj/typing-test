@@ -1,13 +1,14 @@
 import React from 'react';
 import Timer from './Timer.component';
+import { GrDashboard } from "react-icons/gr";
+import { BiError } from "react-icons/bi";
 
 export default function Status({props}) {
-  
-  console.log(props.words);
 
+  //ternary operator for handling error field visibility
   return(
     <div className="status">
-      <h3>Status</h3>
+      <h3>Status Bar <GrDashboard/></h3>
       <p>Choose a Quote</p>
       <p>Start typing sample text to begin test</p>
       <Timer 
@@ -15,8 +16,8 @@ export default function Status({props}) {
       />
       {(props.errors) ?
       <div>
-        <h3>Error Percentage</h3>
-        <p>{props.errors}%</p>
+        <h3>Error % <BiError/></h3>
+        <p>{props.errors} %</p>
       </div>
       : null
       }

@@ -6,13 +6,15 @@ import Input from './components/Input.component';
 import Status from './components/Status.component';
 import quotes from './data/Quotes.data.json';
 
-function App() {
+export default function App() {
 
+  //useState Hook to keep track of state
   const [words, setWords] = useState("");
   const [chars, setChars] = useState(0);
   const [testQuote, setTestQuote] = useState(null);
   const [errors, setErrors] = useState(null);
 
+  //input method to handle updates in input field and set new state
   const handleInput = (e) => {
     const input = e.target.value;
     const char = input.length
@@ -20,6 +22,7 @@ function App() {
     setChars(char);
   }
 
+  //find differences - user input vs chosen quote
   const isCorrect = (str1 = words, str2 = testQuote) => {
     var compareString = function(str1, str2) {
       var a1 = str1.split("");
@@ -47,6 +50,7 @@ function App() {
     }
   }
 
+  //consolidate props to pass to child component
   const props = {
     words,
     chars,
@@ -57,6 +61,7 @@ function App() {
     isCorrect
   }
 
+  //added ternary operator to hide input component until quote chosen
   return (
     <div className="container">
       <div className="flex-1">
@@ -80,5 +85,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

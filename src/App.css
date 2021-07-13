@@ -1,11 +1,22 @@
 html,
 body {
   background-color: grey;
+  font-family: 'Courier New', Courier, monospace;
   height: 100%;
 }
 
 body > #root > div {
   height: 100vh;
+}
+
+h3 {
+  text-decoration: overline;
+  font-size: 1.5rem;
+}
+
+p {
+  color: white;
+  font-size: 1rem;
 }
 
 .container {
@@ -28,7 +39,7 @@ body > #root > div {
 }
 
 .header {
-  background-color: lightblue;
+  background-color: rgba(5, 110, 145, 0.687);
   border: double 5px;
   padding: 10px;
   text-align: center;
