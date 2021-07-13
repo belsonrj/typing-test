@@ -1,5 +1,6 @@
 html,
 body {
+  background-color: grey;
   height: 100%;
 }
 
@@ -27,7 +28,8 @@ body > #root > div {
 }
 
 .header {
-  background-color: red;
+  background-color: lightblue;
+  border: double 5px;
   padding: 10px;
   text-align: center;
   align-items: center;
@@ -35,7 +37,8 @@ body > #root > div {
 }
 
 .input {
-  background-color: yellow;
+  background-color: rgba(91, 91, 83, 0.598);
+  border: outset 5px;
   text-align: center;
   flex: 3;
 }
@@ -50,7 +53,8 @@ body > #root > div {
 }
 
 .status {
-  background-color: lightblue;
+  background-color: rgba(198, 16, 16, 0.666);
+  border: outset 5px;
   text-align: center;
   flex: 1;
 }
