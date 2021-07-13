@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Typing Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This simple react app built with hooks tests a user's typing skills by monitoring words per minute and error percentage.
+- A few movie quotes were chosen to practice typing speed/accuracy
+  - They are listed in order of difficulty from left to right
+
+# Built by Rick Belson
 
 ## Available Scripts
 

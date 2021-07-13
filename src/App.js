@@ -14,7 +14,7 @@ export default function App() {
   const [testQuote, setTestQuote] = useState(null);
   const [errors, setErrors] = useState(null);
 
-  //input method to handle updates in input field and set new state
+  //input method to handle updates in input field, keep track of character length, and set new state
   const handleInput = (e) => {
     const input = e.target.value;
     const char = input.length
