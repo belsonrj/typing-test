@@ -39,12 +39,22 @@ function App() {
     }
 
     if (str1.length < str2.length) {
-      setErrors(compareString((str1, str2).length / testQuote.length) * 100);
+      setErrors(compareString(str1, str2).length / testQuote.length * 100);
       console.log(compareString(str1, str2))
     } else {
-      setErrors(compareString((str2, str1).length / testQuote.length) * 100);
+      setErrors(compareString(str2, str1).length / testQuote.length * 100);
       console.log(compareString(str2, str1));
     }
+  }
+
+  const props = {
+    words,
+    chars,
+    setWords,
+    testQuote,
+    setTestQuote,
+    errors,
+    isCorrect
   }
 
   return (
@@ -64,13 +74,7 @@ function App() {
       </div>
       <div className="flex-2">
         <Status 
-          words={words}
-          chars={chars}
-          setWords={setWords}
-          testQuote={testQuote}
-          setTestQuote={setTestQuote}
-          isCorrect={isCorrect}
-          errors={errors}
+          props={props}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function Timer({chars, setWords, words, testQuote, setTestQuote, isCorrect}) {
+export default function Timer({props}) {
 
   const [timer, setTimer] = useState(0)
   const [isActive, setIsActive] = useState(false)
@@ -9,17 +9,17 @@ export default function Timer({chars, setWords, words, testQuote, setTestQuote, 
   const countRef = useRef(null)
 
   useEffect(() => {
-    if(chars && testQuote && words) {
+    if(props.chars && props.testQuote && props.words) {
       if(isActive === false) {
         handleStart();
-      } else if(isActive === true && chars === testQuote.length) {
+      } else if(isActive === true && props.chars === props.testQuote.length) {
         handlePause();
       }
     }
-  }, [chars, isActive, testQuote, words])
+  }, [props.chars, isActive, props.testQuote, props.words])
 
   const wordsPerMin = () => {
-    let wpm = (words / timer) * 60
+    let wpm = (props.words.length / timer) * 60
     setWpm(wpm);
   }
 
@@ -35,8 +35,7 @@ export default function Timer({chars, setWords, words, testQuote, setTestQuote, 
     clearInterval(countRef.current);
     setIsPaused(true);
     wordsPerMin();
-    isCorrect();
-    console.log(testQuote.length);
+    props.isCorrect();
   }
 
   const handleReset = () => {
@@ -44,8 +43,8 @@ export default function Timer({chars, setWords, words, testQuote, setTestQuote, 
     setIsActive(false);
     setIsPaused(true);
     setTimer(0);
-    setWords(0);
-    setTestQuote(null);
+    props.setWords(0);
+    props.setTestQuote(null);
   }
 
   const formatTime = () => {
@@ -68,8 +67,8 @@ export default function Timer({chars, setWords, words, testQuote, setTestQuote, 
       </div>
       <div>
         <h3>Word Count:</h3>
-        {(words) ?
-          <p>{words.split(" ").length}</p>
+        {(props.words) ?
+          <p>{props.words.split(" ").length}</p>
         : 0
         }
       </div>
